@@ -6,9 +6,7 @@ import {Link} from "../../shared/models/link.model";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements AfterViewInit{
-
-  @ViewChild('submenu') submenuList!: ElementRef;
+export class HeaderComponent {
 
   links: Link[] = [
     {
@@ -20,38 +18,12 @@ export class HeaderComponent implements AfterViewInit{
       children: [
         {
           title: 'directives',
-          children: [
-            {
-              title: '1',
-              url: '/demo/directive'
-            },
-            {
-              title: '2',
-              url: '/demo/directive'
-            },
-            {
-              title: '3',
-              url: '/demo/directive'
-            },
-          ]
+          url: 'demo/directive'
         },
         {
-          title: 'directives',
-          children: [
-            {
-              title: '1',
-              url: '/demo/directive'
-            },
-            {
-              title: '2',
-              url: '/demo/directive'
-            },
-            {
-              title: '3',
-              url: '/demo/directive'
-            },
-          ]
-        }
+          title: 'communication',
+          url: 'demo/comm'
+        },
       ]
     },
     {
@@ -65,9 +37,6 @@ export class HeaderComponent implements AfterViewInit{
     }
   ]
 
-  ngAfterViewInit(): void {
-
-  }
 
 
 

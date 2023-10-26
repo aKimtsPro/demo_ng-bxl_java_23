@@ -1,0 +1,9 @@
+<h2>Menu pizza:</h2>
+
+<p *ngIf="selectedPizza"> la pizza sélectionnée est: {{selectedPizza.name}}</p>
+
+<div>
+  <div *ngFor="let pizza of pizzas">
+    <app-child [pizza]="pizza" (pizzaSelected)="onPizzaSelect($event)"></app-child>
+  </div>
+</div>

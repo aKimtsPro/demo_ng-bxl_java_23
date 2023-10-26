@@ -4,13 +4,17 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import {FormsModule} from "@angular/forms";
 import {DemoRoutingModule} from "./demo-routing.module";
 import { HighlightDirective } from './directives/highlight.directive';
+import { CommComponent } from './components/comm/comm.component';
+import { ChildComponent } from './components/comm/child/child.component';
 
 
 
 @NgModule({
   declarations: [
     DirectivesComponent,
-    HighlightDirective
+    HighlightDirective,
+    CommComponent,
+    ChildComponent
   ],
   imports: [
     CommonModule,
