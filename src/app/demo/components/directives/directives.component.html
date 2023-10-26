@@ -1,0 +1,87 @@
+<h2>Les directives</h2>
+
+<h3>Component Directives</h3>
+
+<h4>ngStyle</h4>
+
+<input type="color" [(ngModel)]="color">
+<button (click)="addColor()">add color</button>
+
+<div class="square"
+    [ngStyle]="{
+      'background-color': color
+    }"
+>
+</div>
+
+<h4>ngClass</h4>
+
+<div>
+  <div>
+    <input type="checkbox" id="check-border" [(ngModel)]="squareOptions.border">
+    <label for="check-border">border</label>
+  </div>
+  <div>
+    <input type="checkbox" id="check-shadow" [(ngModel)]="squareOptions.shadow">
+    <label for="check-shadow">shadow</label>
+  </div>
+</div>
+
+
+<div class="square"
+  [ngClass]="{
+    'bordered': squareOptions.border,
+    'shadowed': squareOptions.shadow,
+    'both': squareOptions.shadow && squareOptions.border
+  }"
+>
+
+</div>
+
+<h3>Directives structurelles</h3>
+
+<h4>*ngIf</h4>
+
+<div>
+  <input type="checkbox" id="check-show-square" [(ngModel)]="showSquare">
+  <label for="check-show-square">{{ showSquare ? 'hide' : 'show' }}</label>
+</div>
+
+<div class="square" [hidden]="!showSquare"></div>
+<div class="square" *ngIf="showSquare; else disparu"></div>
+
+<ng-template #disparu>
+  <p>le square a disparu</p>
+</ng-template>
+
+<h4>*ngFor</h4>
+
+<ng-container *ngFor="let colorElement of colorArray; let i = index">
+  <div class="square"
+       *ngIf="colorElement != '#000000'"
+       [ngStyle]="{'background-color': colorElement}"
+  >
+    {{i}}
+  </div>
+</ng-container>
+
+
+<h4>ngSwitch</h4>
+
+<ng-container [ngSwitch]="color">
+  <div *ngSwitchCase="'#ff0000'">C'est purement rouge</div>
+  <div *ngSwitchCase="'#00ff00'">C'est purement vert</div>
+  <div *ngSwitchCase="'#0000ff'">C'est purement bleu</div>
+  <div *ngSwitchDefault>C'est un mix des 3</div>
+</ng-container>
+
+
+<h3>Directive custom</h3>
+
+<p>
+  <span highlight [color]="color">Lorem ipsum</span> dolor sit amet, consectetur adipisicing elit.
+  <span highlight>A delectus esse facere</span> impedit magnam quaerat quasi qui quia quibusdam reprehenderit!
+  Dignissimos ducimus exercitationem fugit impedit itaque nostrum ratione?
+  <span highlight>Ab architecto </span>
+  aspernatur delectus esse minima nobis odio quasi unde voluptas voluptatem.
+</p>

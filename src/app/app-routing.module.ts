@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'exo', loadChildren: () => import('./exo/exo.module').then( r => r.ExoModule ) },
+  { path: 'demo', loadChildren: () => import('./demo/demo.module').then( r => r.DemoModule ) },
   { path: '404', component: Page404Component },
   { path: '**', redirectTo: '404' },
 ];
