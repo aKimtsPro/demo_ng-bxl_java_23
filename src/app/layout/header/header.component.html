@@ -7,27 +7,52 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
 
-        <li class="nav-item">
-          <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
-        </li>
+        <ng-container
+          *ngFor="let link of links"
+          [ngTemplateOutlet]="!link.children ? simpleLink : parentLink"
+          [ngTemplateOutletContext]="{link:link}"
+        ></ng-container>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            demo
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="demo/directive" routerLinkActive="active">directive</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            exo
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="exo/pipe" routerLinkActive="active">pipe</a></li>
-          </ul>
-        </li>
       </ul>
     </div>
   </div>
 </nav>
+
+
+
+<ng-template #simpleLink let-link="link">
+  <li class="nav-item"><a class="nav-link" [routerLink]="link.url" routerLinkActive="active">{{link.title}}</a></li>
+</ng-template>
+
+<ng-template #parentLink let-link="link">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      {{link.title}}
+    </a>
+    <ul class="dropdown-menu">
+      <ng-container
+        *ngFor="let child of link.children"
+        [ngTemplateOutlet]="!child.children ? childLink : parentChildLink"
+        [ngTemplateOutletContext]="{link: child}"
+      ></ng-container>
+    </ul>
+  </li>
+</ng-template>
+
+<ng-template #parentChildLink let-link="link">
+  <li class="dropdown" #submenu>
+    <a class="dropdown-item dropdown-submenu nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      exo
+    </a>
+    <ul class="dropdown-menu">
+      <ng-container
+        *ngFor="let child of link.children"
+        [ngTemplateOutlet]="!child.children ? childLink : parentChildLink"
+        [ngTemplateOutletContext]="{link}"></ng-container>
+    </ul>
+  </li>
+</ng-template>
+
+<ng-template #childLink let-link="link">
+  <li><a class="dropdown-item" [routerLink]="link.url" routerLinkActive="active">{{link.title}}</a></li>
+</ng-template>
