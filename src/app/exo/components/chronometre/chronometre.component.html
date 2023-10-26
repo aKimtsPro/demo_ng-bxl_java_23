@@ -1,0 +1,5 @@
+<p>{{ secondsPast | chronoFormat }}</p>
+
+<button (click)="play()" [disabled]="!isPaused">play</button>
+<button (click)="pause()" [disabled]="isPaused">pause</button>
+<button (click)="reset()">reset</button>
