@@ -24,6 +24,19 @@ export class PrimeHeaderComponent {
           label: 'communication',
           routerLink: 'demo/comm'
         },
+        {
+          label: 'services',
+          items: [
+            {
+              label: 'component 1',
+              routerLink: 'demo/service1'
+            },
+            {
+              label: 'component 2',
+              routerLink: 'demo/service2'
+            }
+          ]
+        }
       ]
     },
     {
