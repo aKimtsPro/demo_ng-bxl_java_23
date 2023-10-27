@@ -47,8 +47,10 @@
   <label for="check-show-square">{{ showSquare ? 'hide' : 'show' }}</label>
 </div>
 
-<div class="square" [hidden]="!showSquare"></div>
-<div class="square" *ngIf="showSquare; else disparu"></div>
+<div class="flex">
+  <div class="square" [hidden]="!showSquare"></div>
+  <div class="square" *ngIf="showSquare; else disparu"></div>
+</div>
 
 <ng-template #disparu>
   <p>le square a disparu</p>
@@ -56,14 +58,17 @@
 
 <h4>*ngFor</h4>
 
-<ng-container *ngFor="let colorElement of colorArray; let i = index">
-  <div class="square"
-       *ngIf="colorElement != '#000000'"
-       [ngStyle]="{'background-color': colorElement}"
-  >
-    {{i}}
-  </div>
-</ng-container>
+<div class="flex">
+  <ng-container *ngFor="let colorElement of colorArray; let i = index">
+    <div class="square "
+         *ngIf="colorElement != '#000000'"
+         [ngStyle]="{'background-color': colorElement}"
+    >
+      {{i}}
+    </div>
+  </ng-container>
+</div>
+
 
 
 <h4>ngSwitch</h4>

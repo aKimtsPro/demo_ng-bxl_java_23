@@ -7,6 +7,12 @@ import { HomeComponent } from './layout/home/home.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { Page404Component } from './layout/page404/page404.component';
+import {MenubarModule} from "primeng/menubar";
+import { PrimeHeaderComponent } from './layout/prime-header/prime-header.component';
+
+const PRIME_IMPORTS = [
+  MenubarModule,
+]
 
 @NgModule({
   declarations: [
@@ -14,11 +20,13 @@ import { Page404Component } from './layout/page404/page404.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    Page404Component
+    Page404Component,
+    PrimeHeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ...PRIME_IMPORTS
   ],
   providers: [],
   bootstrap: [AppComponent]
