@@ -1,0 +1,24 @@
+
+<table>
+  <thead>
+  <th>id</th>
+  <th>name</th>
+  <th>price</th>
+  <th>qtt</th>
+  <th>action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of panier">
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.price | currency:'EUR'}}</td>
+    <td>{{item.qtt}}</td>
+    <td>
+      <p-button (click)="retirerUn(item)">retirer 1</p-button>
+      <p-button (click)="retirerTout(item)">retirer</p-button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<p>total: {{total | currency:'EUR'}}</p>
