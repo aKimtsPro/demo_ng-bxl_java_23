@@ -1,0 +1,19 @@
+
+<table>
+  <thead>
+    <th>id</th>
+    <th>name</th>
+    <th>price</th>
+    <th>action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>
+        <p-button (click)="ajouterAuPanier(product)">ajouter</p-button>
+      </td>
+    </tr>
+  </tbody>
+</table>

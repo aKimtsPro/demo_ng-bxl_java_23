@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MenuItem} from "primeng/api";
+import {PanierService} from "../../exo/services/panier.service";
 
 @Component({
   selector: 'app-prime-header',
@@ -49,10 +50,30 @@ export class PrimeHeaderComponent {
         {
           label: 'shopping (comm)',
           routerLink: 'exo/comm'
+        },
+        {
+          label: 'shopping (service)',
+          items: [
+            {
+              label: 'list',
+              routerLink: 'exo/product/list'
+            },
+            {
+              label: 'cart',
+              routerLink: 'exo/cart'
+            }
+          ]
         }
       ]
     }
   ]
 
+  constructor(
+    private readonly $panierServ: PanierService
+  ) {}
+
+  get total(){
+    return this.$panierServ.total;
+  }
 
 }
