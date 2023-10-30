@@ -9,6 +9,7 @@ import { ChildComponent } from './components/comm/child/child.component';
 import { C1Component } from './components/service/c1/c1.component';
 import { C2Component } from './components/service/c2/c2.component';
 import {NumberService} from "./services/number.service";
+import { PhraseComponent } from './components/phrase/phrase.component';
 
 
 
@@ -19,7 +20,8 @@ import {NumberService} from "./services/number.service";
     CommComponent,
     ChildComponent,
     C1Component,
-    C2Component
+    C2Component,
+    PhraseComponent
   ],
   imports: [
     CommonModule,
