@@ -4,12 +4,19 @@ import {ChronometreComponent} from "./components/chronometre/chronometre.compone
 import {ShoppingListComponent} from "./components/shopping-list/shopping-list.component";
 import {ListComponent} from "./components/products/list/list.component";
 import {CartComponent} from "./components/products/cart/cart.component";
+import {ExoComponent} from "./exo.component";
 
 const routes: Routes = [
-  { path: 'pipe', component: ChronometreComponent },
-  { path: 'comm', component: ShoppingListComponent },
-  { path: 'product/list', component: ListComponent },
-  { path: 'cart', component: CartComponent },
+  {
+    path: '',
+    component: ExoComponent,
+    children: [
+      { path: 'pipe', component: ChronometreComponent },
+      { path: 'comm', component: ShoppingListComponent },
+    ]
+  }
+  // { path: 'product/list', component: ListComponent },
+  // { path: 'cart', component: CartComponent },
 ];
 
 @NgModule({

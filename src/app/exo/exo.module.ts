@@ -9,6 +9,7 @@ import {TableModule} from "primeng/table";
 import { ListComponent } from './components/products/list/list.component';
 import { CartComponent } from './components/products/cart/cart.component';
 import {ButtonModule} from "primeng/button";
+import { ExoComponent } from './exo.component';
 
 const PRIME_IMPORTS = [
   TableModule,
@@ -21,7 +22,8 @@ const PRIME_IMPORTS = [
     ShoppingListComponent,
     ShoppingCartComponent,
     ListComponent,
-    CartComponent
+    CartComponent,
+    ExoComponent
   ],
   imports: [
     CommonModule,

@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Product} from "@models";
 import {PRODUCT_CREATE_FORM} from "./product.form";
 import {ProductService} from "../../../shared/services/product.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-forms',
@@ -20,7 +21,8 @@ export class FormsComponent {
 
   constructor(
     builder: FormBuilder,
-    private readonly $productServ: ProductService
+    private readonly $productServ: ProductService,
+    private router: Router
   ) {
     this.form = builder.group(PRODUCT_CREATE_FORM)
   }
@@ -29,7 +31,7 @@ export class FormsComponent {
     if( this.form.valid ){
       const product: Product = this.form.value;
       this.$productServ.add( product );
-      this.form.reset();
+      this.router.navigateByUrl('/home')
     }
   }
 }
