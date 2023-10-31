@@ -5,6 +5,7 @@ import {CommComponent} from "./components/comm/comm.component";
 import {C1Component} from "./components/service/c1/c1.component";
 import {C2Component} from "./components/service/c2/c2.component";
 import {PhraseComponent} from "./components/phrase/phrase.component";
+import {FormsComponent} from "./components/forms/forms.component";
 
 const routes: Routes = [
   { path: 'directive', component: DirectivesComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'service1', component: C1Component },
   { path: 'service2', component: C2Component },
   { path: 'phrase/:index', component: PhraseComponent },
+  { path: 'forms', component: FormsComponent },
 ];
 
 @NgModule({

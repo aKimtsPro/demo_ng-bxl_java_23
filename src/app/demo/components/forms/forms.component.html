@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label>id</label><br>
+    <input type="number" formControlName="id"/>
+  </div>
+
+  <div>
+    <label>name</label><br>
+    <input type="text" formControlName="name"/>
+  </div>
+
+  <div>
+    <label>price</label><br>
+    <input type="number" formControlName="price"/>
+  </div>
+
+  <div>
+    <label>category</label><br>
+    <select formControlName="category">
+      <option>Furniture</option>
+      <option>Food</option>
+      <option>Electronic</option>
+    </select>
+  </div>
+
+  <button type="submit">ajouter produit</button>
+
+</form>

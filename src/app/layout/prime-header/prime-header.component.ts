@@ -37,7 +37,11 @@ export class PrimeHeaderComponent {
               routerLink: 'demo/service2'
             }
           ]
-        }
+        },
+        {
+          label: 'reactive forms',
+          routerLink: 'demo/forms'
+        },
       ]
     },
     {
