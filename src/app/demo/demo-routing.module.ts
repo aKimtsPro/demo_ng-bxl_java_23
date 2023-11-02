@@ -7,6 +7,7 @@ import {C2Component} from "./components/service/c2/c2.component";
 import {PhraseComponent} from "./components/phrase/phrase.component";
 import {FormsComponent} from "./components/forms/forms.component";
 import {OddGuard} from "./guard/odd.guard";
+import {ObservableComponent} from "./components/observable/observable.component";
 
 const routes: Routes = [
   { path: 'directive', component: DirectivesComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'service2', component: C2Component },
   { path: 'phrase/:index', component: PhraseComponent, canActivate: [OddGuard] },
   { path: 'forms', component: FormsComponent },
+  { path: 'obs', component: ObservableComponent },
 ];
 
 @NgModule({

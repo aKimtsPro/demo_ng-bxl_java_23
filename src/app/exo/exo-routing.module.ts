@@ -13,10 +13,10 @@ const routes: Routes = [
     children: [
       { path: 'pipe', component: ChronometreComponent },
       { path: 'comm', component: ShoppingListComponent },
+      { path: 'product/list', component: ListComponent },
+      { path: 'cart', component: CartComponent },
     ]
   }
-  // { path: 'product/list', component: ListComponent },
-  // { path: 'cart', component: CartComponent },
 ];
 
 @NgModule({

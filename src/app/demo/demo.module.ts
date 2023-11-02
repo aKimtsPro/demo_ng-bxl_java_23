@@ -11,6 +11,9 @@ import { C2Component } from './components/service/c2/c2.component';
 import {NumberService} from "./services/number.service";
 import { PhraseComponent } from './components/phrase/phrase.component';
 import { FormsComponent } from './components/forms/forms.component';
+import { ObservableComponent } from './components/observable/observable.component';
+import { ObsAddComponent } from './components/observable/obs-add/obs-add.component';
+import { ObsSumComponent } from './components/observable/obs-sum/obs-sum.component';
 
 
 
@@ -23,7 +26,10 @@ import { FormsComponent } from './components/forms/forms.component';
     C1Component,
     C2Component,
     PhraseComponent,
-    FormsComponent
+    FormsComponent,
+    ObservableComponent,
+    ObsAddComponent,
+    ObsSumComponent
   ],
   imports: [
     CommonModule,

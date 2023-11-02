@@ -42,6 +42,10 @@ export class PrimeHeaderComponent {
           label: 'reactive forms',
           routerLink: 'demo/forms'
         },
+        {
+          label: 'observables',
+          routerLink: 'demo/obs'
+        },
       ]
     },
     {

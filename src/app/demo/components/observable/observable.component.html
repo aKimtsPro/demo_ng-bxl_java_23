@@ -1,0 +1,12 @@
+<input type="number" [(ngModel)]="number">
+<button (click)="emit()">envoyer</button>
+
+
+<button (click)="subscribe()">subscribe!</button>
+
+
+<div class="flex justify-content-around">
+  <app-obs-add></app-obs-add>
+
+  <app-obs-sum></app-obs-sum>
+</div>

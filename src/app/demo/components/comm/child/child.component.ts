@@ -23,7 +23,7 @@ export class ChildComponent {
   }
 
   select(){
-    this.dataCatapult.emit(this.pizza)
+    this.dataCatapult.emit(this.pizza);
   }
 
 }

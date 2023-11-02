@@ -1,0 +1,18 @@
+<h3>Sum</h3>
+
+
+
+<div>
+  <ng-container *ngIf="sum$; else sub">
+    <ng-container *ngIf="error; else sum">
+      <p>{{error}}</p>
+    </ng-container>
+    <ng-template #sum>
+      <p>la somme est: {{sum$ | async}}</p>
+    </ng-template>
+  </ng-container>
+
+  <ng-template #sub>
+    <button (click)="subscribe()">subscribe to behaviorSubject</button>
+  </ng-template>
+</div>
