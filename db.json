@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "sofa",
+      "price": 300,
+      "category": "Furniture"
+    },
+    {
+      "id": 2,
+      "name": "chair",
+      "price": 50,
+      "category": "Furniture"
+    },
+    {
+      "id": 3,
+      "name": "TV",
+      "price": 400,
+      "category": "Electronic"
+    }
+  ]
+}

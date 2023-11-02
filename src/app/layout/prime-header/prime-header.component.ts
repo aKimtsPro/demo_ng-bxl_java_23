@@ -46,6 +46,10 @@ export class PrimeHeaderComponent {
           label: 'observables',
           routerLink: 'demo/obs'
         },
+        {
+          label: 'appel api',
+          routerLink: 'demo/api'
+        },
       ]
     },
     {

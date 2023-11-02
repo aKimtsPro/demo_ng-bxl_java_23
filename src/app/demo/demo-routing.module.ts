@@ -8,6 +8,7 @@ import {PhraseComponent} from "./components/phrase/phrase.component";
 import {FormsComponent} from "./components/forms/forms.component";
 import {OddGuard} from "./guard/odd.guard";
 import {ObservableComponent} from "./components/observable/observable.component";
+import {ProductApiComponent} from "./components/product-api/product-api.component";
 
 const routes: Routes = [
   { path: 'directive', component: DirectivesComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'phrase/:index', component: PhraseComponent, canActivate: [OddGuard] },
   { path: 'forms', component: FormsComponent },
   { path: 'obs', component: ObservableComponent },
+  { path: 'api', component: ProductApiComponent },
 ];
 
 @NgModule({

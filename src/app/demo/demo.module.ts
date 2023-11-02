@@ -14,6 +14,9 @@ import { FormsComponent } from './components/forms/forms.component';
 import { ObservableComponent } from './components/observable/observable.component';
 import { ObsAddComponent } from './components/observable/obs-add/obs-add.component';
 import { ObsSumComponent } from './components/observable/obs-sum/obs-sum.component';
+import {HttpClientModule} from "@angular/common/http";
+import { ProductApiComponent } from './components/product-api/product-api.component';
+import {ProductApiService} from "./services/product-api.service";
 
 
 
@@ -29,16 +32,19 @@ import { ObsSumComponent } from './components/observable/obs-sum/obs-sum.compone
     FormsComponent,
     ObservableComponent,
     ObsAddComponent,
-    ObsSumComponent
+    ObsSumComponent,
+    ProductApiComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     DemoRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    NumberService
+    NumberService,
+    ProductApiService,
   ]
 })
 export class DemoModule { }
